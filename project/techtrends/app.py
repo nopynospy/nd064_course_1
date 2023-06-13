@@ -78,7 +78,7 @@ def create():
 @app.route('/healthz')
 def healthz():
     response = app.response_class(
-            response=json.dumps({"result":"OK - healthy"}),
+            response = json.dumps({"result":"OK - healthy"}),
             status=200,
             mimetype='application/json'
     )
@@ -92,7 +92,7 @@ def metrics():
     posts = connection.execute('SELECT * FROM posts').fetchall()
     connection.close()
     response = app.response_class(
-            response=json.dumps({
+            response = json.dumps({
                 "status":"success",
                 "data":{
                     "db_connection_count": conn_count, "post_count": len(posts)
