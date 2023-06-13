@@ -1,11 +1,67 @@
 ## Docker commands used to build the application 
 # TODO: insert the docker build command
+docker build -t techtrends .
 
 ## Docker commands used to run the application
 # TODO: insert the docker run command
+docker run --name techtrends-test -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
+docker logs techtrends-test
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug: * Running on all addresses.
+WARNING:werkzeug:2023-06-13 14:13:05,611  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:2023-06-13 14:13:05,611  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:13:13,518 172.17.0.1 - - [13/Jun/2023 14:13:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:13] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2023-06-13 14:13:13,565 172.17.0.1 - - [13/Jun/2023 14:13:13] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:root:Article "$2020 CNCF Annual Report" retrieved!
+INFO:root:2023-06-13 14:13:20,379 Article "$2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:2023-06-13 14:13:20,391 172.17.0.1 - - [13/Jun/2023 14:13:20] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:20] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:13:20,434 172.17.0.1 - - [13/Jun/2023 14:13:20] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:20] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:root:2023-06-13 14:13:34,723 Article "$Kubernetes v1.20 Release Notes" retrieved!
+INFO:root:Article "$Kubernetes v1.20 Release Notes" retrieved!
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:34] "GET /3 HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:13:34,725 172.17.0.1 - - [13/Jun/2023 14:13:34] "GET /3 HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:13:34,776 172.17.0.1 - - [13/Jun/2023 14:13:34] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:34] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2023-06-13 14:13:38,906 172.17.0.1 - - [13/Jun/2023 14:13:38] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:38] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:13:38,948 172.17.0.1 - - [13/Jun/2023 14:13:38] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:38] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:51] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:2023-06-13 14:13:51,749 172.17.0.1 - - [13/Jun/2023 14:13:51] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:13:51,765 172.17.0.1 - - [13/Jun/2023 14:13:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:13:51,813 172.17.0.1 - - [13/Jun/2023 14:13:51] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:51] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:root:2023-06-13 14:13:55,953 Article "$Meow Meow!" retrieved!
+INFO:root:Article "$Meow Meow!" retrieved!
+INFO:werkzeug:2023-06-13 14:13:55,955 172.17.0.1 - - [13/Jun/2023 14:13:55] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:55] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:13:55,995 172.17.0.1 - - [13/Jun/2023 14:13:55] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:13:55] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:14:03] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:14:03,550 172.17.0.1 - - [13/Jun/2023 14:14:03] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:14:09,261 172.17.0.1 - - [13/Jun/2023 14:14:09] "GET /healthz HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:14:09] "GET /healthz HTTP/1.1" 200 -
+INFO:root:About Us Page is retrieved
+INFO:root:2023-06-13 14:14:12,628 About Us Page is retrieved
+INFO:werkzeug:2023-06-13 14:14:12,637 172.17.0.1 - - [13/Jun/2023 14:14:12] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:14:12] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2023-06-13 14:14:12,680 172.17.0.1 - - [13/Jun/2023 14:14:12] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [13/Jun/2023 14:14:12] "GET /static/css/main.css HTTP/1.1" 304 -
