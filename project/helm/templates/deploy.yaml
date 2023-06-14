@@ -4,6 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: techtrends
+    tag: latest
   name: techtrends
   namespace: {{ .Values.namespace.name }}
 spec:
@@ -11,12 +12,17 @@ spec:
   selector:
     matchLabels:
       app: techtrends
-  strategy: {}
+      tag: latest
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: techtrends
+        tag: latest
     spec:
       containers:
       - image: kaetsmjau/{{ .Values.image.repository }}:{{ .Values.image.tag }}
