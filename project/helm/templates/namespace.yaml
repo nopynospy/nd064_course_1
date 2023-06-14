@@ -3,5 +3,3 @@ kind: Namespace
 metadata:
   creationTimestamp: null
   name: {{ .Values.namespace.name }}
-spec: {}
-status: {}
