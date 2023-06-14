@@ -77,11 +77,32 @@ def create():
 # Healthcheck endpoint
 @app.route('/healthz')
 def healthz():
-    response = app.response_class(
+    # Original hard-coded healthcheck response
+    # response = app.response_class(
+    #         response = json.dumps({"result":"OK - healthy"}),
+    #         status=200,
+    #         mimetype='application/json'
+    # )
+
+    # Standout Suggestion 1: Dynamic Healthcheck endpoint
+    try:
+        # get_db_connection after deleting database.db will create a blank db
+        connection = get_db_connection()
+        # Therefore, check if posts table exists after connection
+        connection.execute('SELECT * FROM posts').fetchall()
+        response = app.response_class(
             response = json.dumps({"result":"OK - healthy"}),
             status=200,
             mimetype='application/json'
-    )
+        )
+    except Exception as e:
+        response = app.response_class(
+            response = json.dumps({"result":"ERROR - unhealth"}),
+            status=500,
+            mimetype='application/json'
+        )
+        # Log error
+        logging.error(e)
     return response
 
 # Metrics endpoint
