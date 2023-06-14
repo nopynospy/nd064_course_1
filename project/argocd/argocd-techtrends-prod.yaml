@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: techtrends-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    helm:
+      valuefiles:
+        - values-prod.yaml
+    repoURL: https://github.com/nopynospy/nd064_course_1
+    targetRevision: HEAD
+    path: ./project/helm
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
