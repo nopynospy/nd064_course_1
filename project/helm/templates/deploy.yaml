@@ -19,7 +19,7 @@ spec:
         app: techtrends
     spec:
       containers:
-      - image: kaetsmjau/{{ .Values.image.repository }}:{{ .Values.image.tag }}
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: techtrends
         ports:
