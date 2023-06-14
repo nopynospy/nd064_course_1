@@ -7,11 +7,11 @@ spec:
   project: default
   source:
     helm:
-      valuefiles:
+      valueFiles:
         - values-staging.yaml
     repoURL: https://github.com/nopynospy/nd064_course_1
     targetRevision: HEAD
-    path: ./project/helm
+    path: project/helm
   destination:
     server: https://kubernetes.default.svc
     namespace: default
