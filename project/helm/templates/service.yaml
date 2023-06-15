@@ -10,7 +10,9 @@ spec:
   ports:
   - port: {{ .Values.service.port }}
     protocol: {{ .Values.service.protocol }}
-    targetPort: {{ .Values.service.targetPort }}
+    # targetPort: {{ .Values.service.targetPort }}
+    # Standout Suggestion 3: Helm chart conditionals
+    targetPort: {{ .Values.service.targetPort | default .Values.service.port | quote }}
   selector:
     app: techtrends
   type: {{ .Values.service.type }}
