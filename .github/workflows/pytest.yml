@@ -23,7 +23,7 @@ jobs:
         # As seen in ci-github-actions_pytest_failed.png
         # Error message was "Error: Version X with arch x64 not found"
         # python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
-        python-version: ["2.7x", "3.7x", "3.8x"]
+        ppython-version: ["2.7x", "3.7x", "3.8x"]
     ## Define a sequence of steps to be executed
     steps:
       ## Use the public `checkout` action  in version v2  

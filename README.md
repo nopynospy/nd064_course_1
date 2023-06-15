@@ -42,7 +42,7 @@ I encountered some additional challenges outside of the project steps.
         My pytest kept failing in github action.<br>
         ![alt text](project/screenshots/ci-github-actions_pytest_failed_python.png)<br>
         I fixed the issue by referring to [the list of available python versions in git action](https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json)<br>
-        I found out the cause was in the dockerfile, ubuntu latest is used (which is <code>22.04</code>), so I replaced <code>python-version: [2.7, 3.5, 3.6, 3.7, 3.8]</code> with <code>python-version: ["2.7x", "3.7x", "3.8x"]</code> because there is no 3.5 and 3.6 for 22.04 and 'x' basically means let the git action use any compatible minor python version.<br>
+        I found out the cause was in the dockerfile, ubuntu latest is used (which is <code>22.04</code>), so I replaced <code>python-version: [2.7, 3.5, 3.6, 3.7, 3.8]</code> with <code>ppython-version: ["2.7x", "3.7x", "3.8x"]</code> because there is no 3.5 and 3.6 for 22.04 and 'x' basically means let the git action use any compatible minor python version.<br>
 
 </ol>
 
