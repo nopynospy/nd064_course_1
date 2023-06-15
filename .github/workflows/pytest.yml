@@ -21,13 +21,13 @@ jobs:
     steps:
       ## Use the public `checkout` action  in version v2  
       ## to checkout the existing code in the repository
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       ## Use the public `setup-python` actoin  in version v2  
       ## to install python on the Ubuntu based environment.
       ## Additionally, it ensures to loop through all 
       ## the defined Python versions.
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
     ## Install all necessary dependecies .
