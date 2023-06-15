@@ -17,10 +17,13 @@ jobs:
     strategy:
       matrix:
         # Python versions taken from list of available versions
+        # 3.5 and 3.6 do not have platform_version 22.04, causing error
+        # -x is added to the versions
         # https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json
         # As seen in ci-github-actions_pytest_failed.png
-        # Error message "was Error: Version X with arch x64 not found"
-        python-version: [2.7.18, 3.5.10, 3.6.15, 3.7.17, 3.8.17]
+        # Error message was "Error: Version X with arch x64 not found"
+        # python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
+        ppython-version: ["2.7x", "3.7x", "3.8x"]
     ## Define a sequence of steps to be executed
     steps:
       ## Use the public `checkout` action  in version v2  
