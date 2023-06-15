@@ -42,9 +42,10 @@ jobs:
           context: ./project/techtrends
           file: ./project/techtrends/Dockerfile
           platforms: linux/amd64
-          push: true
+          # push: true
           # tags: kaetsmjau/techtrends:latest
           # Standout Suggestion 2: Push Docker images with custom tags
+          # Taken from https://docs.docker.com/build/ci/github-actions/manage-tags-labels/
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
