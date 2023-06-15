@@ -16,21 +16,22 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # Python versions added -x due to pytest fail
+        # Python versions taken from list of available versions
+        # https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json
         # As seen in ci-github-actions_pytest_failed.png
         # Error message "was Error: Version X with arch x64 not found"
-        python-version: ["2.7x", "3.5x", "3.6x", "3.7x", "3.8x"]
+        python-version: [2.7.18, 3.5.10, 3.6.15, 3.7.17, 3.8.17]
     ## Define a sequence of steps to be executed
     steps:
       ## Use the public `checkout` action  in version v2  
       ## to checkout the existing code in the repository
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
       ## Use the public `setup-python` actoin  in version v2  
       ## to install python on the Ubuntu based environment.
       ## Additionally, it ensures to loop through all 
       ## the defined Python versions.
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
     ## Install all necessary dependecies .

@@ -15,9 +15,9 @@ jobs:
     steps:
       ## Use the public `checkout` actoin  in version v2  
       ## to checkout the existing code in the repository
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       ## Use the public `setup-python` action  in version v2  
       ## to install python on the Ubuntu based environment 
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v2
       ## Executes the `python --version` command
       - run: python --version
