@@ -2,7 +2,7 @@ FROM python:3.8
 
 LABEL maintainer="Kelvin Tan"
 
-COPY . /app
+COPY ./techtrends /app
 
 WORKDIR /app
 
