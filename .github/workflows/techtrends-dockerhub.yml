@@ -43,4 +43,8 @@ jobs:
           file: ./project/techtrends/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: kaetsmjau/techtrends:latest
+          # tags: kaetsmjau/techtrends:latest
+          # Standout Suggestion 2: Push Docker images with custom tags
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
